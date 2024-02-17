@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProgrammingHero Paribahan</title>
+    <!-- daisy UI and Tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- tailwind custom class -->
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#1DD100",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- navbar -->
+
+    <div class="my-4 px-2.5 lg:mx-20">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li class="font-bold hover:text-brand">
+                <a>Home</a>
+              </li>
+              <li class="font-bold hover:text-brand"><a>About</a></li>
+              <li class="font-bold hover:text-brand"><a>Pages</a></li>
+              <li class="font-bold hover:text-brand"><a>Blog</a></li>
+            </ul>
+          </div>
+          <p class="text-2xl font-bold">P-Ticket</p>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li class="font-bold hover:text-brand">
+              <a>Home</a>
+            </li>
+            <li class="font-bold hover:text-brand"><a>About</a></li>
+            <li class="font-bold hover:text-brand"><a>Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar-end">
+          <a href="#" class="btn bg-[#E8FAE5] border-brand text-brand"
+            >Bus <img src="images/bus-icon.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- banner section -->
+    <section class="px-2.5 lg:mx-20">
+      <div
+        class="hero rounded-lg"
+        style="background-image: url(images/banner.png)"
+      >
+        <div class="hero-overlay rounded-lg bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+          <div class="max-w-md">
+            <h1 class="mb-5 text-5xl font-bold">
+              End-to-End Travel with <br />
+              <span class="text-brand">P Paribahan</span>
+            </h1>
+            <p class="mb-5">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
+              et a id nisi.
+            </p>
+            <button class="btn bg-brand border-0">Buy Tickets</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- offers section-->
+
+    <section class="my-16 text-center px-2.5 lg:mx-20">
+      <h2 class="text-3xl text-center font-bold">Best offers for you</h2>
+      <div class="cupon-container grid grid-cols-1 md:grid-cols-2 my-8 gap-5">
+        <div class="cupon-15 bg-yellow-400 rounded-lg flex">
+          <div class="w-3/5 flex flex-col text-left justify-center">
+            <div class="pl-8 ml-8">
+              <h2 class="font-extrabold text-3xl">15% OFF</h2>
+              <p>
+                on your next purchase <br />
+                <span class="opacity-65">use by January 2024</span>
+              </p>
+            </div>
+          </div>
+          <img src="images/cupon-devider.png" class="h-auto" alt="" />
+          <div class="w-2/5 flex flex-col justify-center items-center">
+            <h2 class="font-bold text-2xl">NEW15</h2>
+            <p class="opacity-65">Coupon Code</p>
+          </div>
+        </div>
+        <div class="cupon-20 bg-rose-400 rounded-lg flex">
+          <div class="w-3/5 flex flex-col text-left justify-center">
+            <div class="pl-8 ml-8">
+              <h2 class="font-extrabold text-3xl">20% OFF</h2>
+              <p>
+                on your next purchase <br />
+                <span class="opacity-65">use by January 2024</span>
+              </p>
+            </div>
+          </div>
+          <img src="images/cupon-devider.png" class="h-auto" alt="" />
+          <div class="w-2/5 flex flex-col justify-center items-center">
+            <h2 class="font-bold text-2xl">Couple 20</h2>
+            <p class="opacity-65">Coupon Code</p>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="text-brand border-brand border p-2 rounded-lg">
+        See All Offers</a
+      >
+    </section>
+
+    <!-- ticket booking section -->
+
+    <section
+      class="text-center my-16 py-16 border-brand bg-[#F7F8F8] rounded-t-[80px] border-t-2"
+    >
+      <h2 class="text-xl font-bold">P.H Paribahan</h2>
+      <p>
+        Yes, you can run unit tests and view the results directly within the
+        app. The integrated testing features allow for a streamlined .
+      </p>
+      <div class="my-8 md:px-20">
+        <div class="bg-white rounded-[30px] flex">
+          <div class="w-9/12 py-8 pl-8">
+            <div class="flex flex-col md:flex-row gap-2 justify-between mb-5">
+              <div class="flex gap-2">
+                <span class="flex items-center"
+                  ><img src="images/bus-logo.png" class="w-full" alt=""
+                /></span>
+                <span class="text-left"
+                  ><h2 class="font-bold text-2xl">P.H Paribahan</h2>
+                  <p>Coach-009-WEB ! AC_Business</p></span
+                >
+              </div>
+
+              <a href="#" class="btn bg-[#E8FAE5] border-brand text-brand"
+                ><img src="images/seat-green.png" alt="" /> 40 seat left</a
+              >
+            </div>
+            <div
+              class="bg-[#F7F8F8] divide-y-2 divide-dashed divide-gray-300 p-4 rounded-[15px]"
+            >
+              <div class="flex justify-between py-4">
+                <span class="opacity-80 font-medium">Route</span>
+                <h4 class="font-medium">Dhaka - Sylhet</h4>
+              </div>
+              <div class="flex justify-between py-3">
+                <span class="opacity-80 font-medium">Departure Time</span>
+                <h4 class="font-medium">9:00 PM</h4>
+              </div>
+              <div class="flex flex-col md:flex-row gap-2 justify-between py-3">
+                <button
+                  class="opacity-95 p-4 bg-gray-200 rounded-lg font-medium"
+                >
+                  Boarding Point - Laxmipur
+                </button>
+                <button
+                  class="opacity-95 p-4 bg-gray-200 rounded-lg font-medium"
+                >
+                  Dropping Point - Bogura
+                </button>
+                <button
+                  class="opacity-95 p-4 bg-gray-200 rounded-lg font-medium"
+                >
+                  Est. Time - 11 Hour
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <img src="images/info-devider.png" class="h-auto" alt="" />
+          <div class="w-3/12 flex flex-col gap-3 justify-center items-center">
+            <img src="images/fare.png" alt="" />
+            <h2 class="font-bold text-2xl">550 Taka</h2>
+            <p class="opacity-65 font-semibold text-xl">Per Seat</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
