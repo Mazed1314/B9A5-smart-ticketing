@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProgrammingHero Paribahan</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
     <!-- daisy UI and Tailwind -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
@@ -25,6 +30,15 @@
         },
       };
     </script>
+
+    <!-- custom css -->
+    <style>
+      .bus_seat {
+        display: grid;
+        grid-template-columns: repeat(1, 10px 2fr 2fr);
+        grid-column-gap: 40px;
+      }
+    </style>
   </head>
   <body>
     <!-- navbar -->
@@ -212,6 +226,128 @@
             <img src="images/fare.png" alt="" />
             <h2 class="font-bold text-2xl">550 Taka</h2>
             <p class="opacity-65 font-semibold text-xl">Per Seat</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- seat plan -->
+      <div
+        class="my-8 mx-4 md:mx-20 bg-white rounded-[20px] flex flex-col md:flex-row"
+      >
+        <div
+          class="border-b-2 md:border-b-0 md:border-r-2 border-dashed p-4 m-4 w-full md:w-3/5"
+        >
+          <h2 class="text-left py-2">Select Your Seat</h2>
+          <div class="flex justify-between border-y-2 border-dashed py-2">
+            <div class="text-gray-400">
+              <img src="images/seat-gray.png" alt="" /> <span>Available</span>
+            </div>
+            <div class="text-brand">
+              <img src="images/seat-green.png" alt="" /> <span>Selected</span>
+            </div>
+          </div>
+          <div class="flex flex-row-reverse">
+            <button class="bg-gray-200 py-4 px-8 rounded-lg my-4">
+              <i class="fa-solid fa-peace"></i>
+            </button>
+          </div>
+          <div class="bus_seat text-gray-500">
+            <div class="grid grid-cols-1 gap-2">
+              <button class="p-2">A</button>
+              <button class="p-2">B</button>
+              <button class="p-2">C</button>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="bg-gray-100 py-4 px-8 rounded-lg">A1</button>
+              <button class="bg-gray-100 py-4 px-8 rounded-lg">A2</button>
+              <button class="bg-gray-100 py-4 px-8 rounded-lg">B1</button>
+              <button class="bg-gray-100 py-4 px-8 rounded-lg">B2</button>
+              <button class="bg-gray-100 py-4 px-8 rounded-lg">C1</button>
+              <button class="bg-gray-100 py-4 px-8 rounded-lg">C2</button>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="bg-gray-100 py-4 px-8 rounded-lg">A3</button>
+              <button class="bg-gray-100 py-4 px-8 rounded-lg">A4</button>
+              <button class="bg-gray-100 py-4 px-8 rounded-lg">B3</button>
+              <button class="bg-gray-100 py-4 px-8 rounded-lg">B4</button>
+              <button class="bg-gray-100 py-4 px-8 rounded-lg">C3</button>
+              <button class="bg-gray-100 py-4 px-8 rounded-lg">C4</button>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 m-4 w-full md:md:w-2/5">
+          <h2 class="text-left py-2 border-b-2 border-dashed">Get Ticket</h2>
+          <div class="m-4 bg-gray-100 p-4 rounded-lg">
+            <div class="">
+              <div class="flex justify-between border-b-2 border-dashed pb-2">
+                <p>
+                  Seat
+                  <span class="bg-brand text-white rounded-lg px-2">0</span>
+                </p>
+                <p>Class</p>
+                <p>Price</p>
+              </div>
+            </div>
+            <div class="flex justify-between border-t-2 pb-2 my-2">
+              <p>Total Price</p>
+              <p>BDT <span>0</span></p>
+            </div>
+            <label class="input flex items-center">
+              <input type="text" class="grow" placeholder="Have any copupon?" />
+
+              <a
+                class="btn p-2 my-2 rounded-lg bg-brand text-white"
+                disabled="disabled"
+              >
+                Apply
+              </a>
+            </label>
+            <div class="flex justify-between pb-2 my-2">
+              <p>Grand Total</p>
+              <p>BDT <span>0</span></p>
+            </div>
+          </div>
+          <div class="p-4">
+            <label class="form-control w-full max-w-xs">
+              <div class="label">
+                <span class="label-text">Passenger Name*</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                class="input input-bordered w-full max-w-xs"
+              />
+            </label>
+            <label class="form-control w-full max-w-xs">
+              <div class="label">
+                <span class="label-text">Phone Number*</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Enter your phone number"
+                class="input input-bordered w-full max-w-xs"
+              />
+            </label>
+            <label class="form-control w-full max-w-xs">
+              <div class="label">
+                <span class="label-text">Email ID</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Enter your email id"
+                class="input input-bordered w-full max-w-xs"
+              />
+            </label>
+            <button
+              class="btn btn-wide bg-brand text-white m-4"
+              disabled="disabled"
+            >
+              Next
+            </button>
+            <div class="flex justify-around my-2">
+              <a><u>Terms and Conditions</u></a>
+              <a><u>Cancellation Policy</u></a>
+            </div>
           </div>
         </div>
       </div>
