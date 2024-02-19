@@ -57,7 +57,7 @@
     <header>
       <!-- navbar -->
 
-      <div class="my-4 px-2.5 lg:mx-20">
+      <div id="up" class="my-4 px-2.5 lg:mx-20">
         <div class="navbar bg-base-100">
           <div class="navbar-start">
             <div class="dropdown">
@@ -303,9 +303,9 @@
               </div>
             </div>
             <div class="flex flex-row-reverse">
-              <button class="bg-gray-200 p-4 rounded-lg my-4">
+              <a class="bg-gray-200 p-4 rounded-lg my-4">
                 <i class="fa-solid fa-peace text-3xl"></i>
-              </button>
+              </a>
             </div>
 
             <!-- seats/buttons -->
@@ -479,7 +479,7 @@
               <button
                 disabled="disabled"
                 id="modal"
-                class="btn md:btn-wide bg-brand text-white m-4"
+                class="btn btn-wide bg-brand text-white md:m-4"
                 onclick="my_modal_5.showModal() "
               >
                 Next
@@ -500,9 +500,13 @@
                   <p>Shortly you will find a confirmation in your email.</p>
                   <div class="modal-action flex justify-center">
                     <form method="dialog">
-                      <button href="#" class="btn btn-wide bg-brand text-white">
+                      <a
+                        href="#up"
+                        onclick="location.reload()"
+                        class="btn btn-wide bg-brand text-white"
+                      >
                         Close
-                      </button>
+                      </a>
                     </form>
                   </div>
                 </div>

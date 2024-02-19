@@ -71,7 +71,7 @@ document.getElementById("PhoneNo").addEventListener("keyup", function (e) {
     alert("Pleas at least select a seat ");
     input.setAttribute("disabled", true);
     return back;
-  } else if (!isNaN(text) && text.length === 11 && count <= 4 && count != 0) {
+  } else if (!isNaN(text) && text.length > 0 && count <= 4 && count != 0) {
     input.removeAttribute("disabled");
   } else {
     input.setAttribute("disabled", true);
