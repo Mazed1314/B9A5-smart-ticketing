@@ -3,7 +3,6 @@ let count = 0;
 for (const seat of seats) {
   seat.addEventListener("click", function (e) {
     count = count + 1;
-
     if (count == 4) {
       for (const s of seats) {
         s.setAttribute("disabled", true);
@@ -43,25 +42,33 @@ for (const seat of seats) {
 
 document.getElementById("coupon").addEventListener("keyup", function (e) {
   const text = e.target.value;
+  let discount;
   const token = document.getElementById("couponApply");
-  if (text === "NEW15") {
+  if (count !== 4) {
+    token.setAttribute("disabled", true);
+    alert("Coupon not allow, For coupon book 4 seat");
+  } else if (count == 4 && text === "NEW15") {
     token.removeAttribute("disabled");
     const takeTotalPrice = document.getElementById("grandTotal").innerText;
     const grandTotalInt = parseInt(takeTotalPrice);
+    discount = grandTotalInt * 0.15;
     newDiscountTotal = grandTotalInt - grandTotalInt * 0.15;
-  } else if (text === "Couple 20") {
+  } else if (count == 4 && text === "Couple 20") {
     token.removeAttribute("disabled");
     const takeTotalPrice = document.getElementById("grandTotal").innerText;
     const grandTotalInt = parseInt(takeTotalPrice);
+    discount = grandTotalInt * 0.2;
     newDiscountTotal = grandTotalInt - grandTotalInt * 0.2;
   } else {
     token.setAttribute("disabled", true);
   }
 });
+
 function discountedGrandTotal() {
   setTextElementValueById("grandTotal", newDiscountTotal);
   document.getElementById("couponApply").classList.add("hidden");
   document.getElementById("couponHolder").classList.add("hidden");
+  const p4 = document.createElement("p");
 }
 // --------------------------------------------------------------------------------
 document.getElementById("PhoneNo").addEventListener("keyup", function (e) {
