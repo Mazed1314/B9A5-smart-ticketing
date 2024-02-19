@@ -33,6 +33,14 @@
 
     <!-- custom css -->
     <style>
+      body {
+        .raleway {
+          font-family: "Raleway", sans-serif;
+        }
+        .inter {
+          font-family: "Inter", sans-serif;
+        }
+      }
       .bus_seat {
         display: grid;
         grid-template-columns: repeat(1, 10px 2fr 2fr);
@@ -88,7 +96,7 @@
         </div>
 
         <div class="navbar-end">
-          <a href="#" class="btn bg-[#E8FAE5] border-brand text-brand"
+          <a href="#booking" class="btn bg-[#E8FAE5] border-brand text-brand"
             >Bus <img src="images/bus-icon.png" alt=""
           /></a>
         </div>
@@ -113,7 +121,7 @@
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <button class="btn bg-brand border-0">Buy Tickets</button>
+            <a href="#booking" class="btn bg-brand border-0"> Buy Tickets </a>
           </div>
         </div>
       </div>
@@ -152,7 +160,7 @@
           </div>
           <img src="images/cupon-devider.png" class="h-auto" alt="" />
           <div class="w-3/12 flex flex-col justify-center items-center px-4">
-            <h2 class="font-bold text-2xl">Couple20</h2>
+            <h2 class="font-bold text-2xl">Couple 20</h2>
             <p class="opacity-65">Coupon Code</p>
           </div>
         </div>
@@ -186,8 +194,9 @@
                 >
               </div>
 
-              <a href="#" class="btn bg-[#E8FAE5] border-brand text-brand"
-                ><img src="images/seat-green.png" alt="" /> 40 seat left</a
+              <a href="" class="btn bg-[#E8FAE5] border-brand text-brand"
+                ><img src="images/seat-green.png" alt="" />
+                <span id="seatLeft">12</span> seat left</a
               >
             </div>
             <div
@@ -235,6 +244,7 @@
         class="my-8 mx-4 md:mx-20 bg-white rounded-[20px] flex flex-col md:flex-row"
       >
         <div
+          id="booking"
           class="border-b-2 md:border-b-0 md:border-r-2 border-dashed p-4 m-4 w-full md:w-3/5"
         >
           <h2 class="text-left py-2">Select Your Seat</h2>
@@ -258,20 +268,48 @@
               <button class="p-2">C</button>
             </div>
             <div class="grid grid-cols-2 gap-2">
-              <button class="bg-gray-100 py-4 px-8 rounded-lg">A1</button>
-              <button class="bg-gray-100 py-4 px-8 rounded-lg">A2</button>
-              <button class="bg-gray-100 py-4 px-8 rounded-lg">B1</button>
-              <button class="bg-gray-100 py-4 px-8 rounded-lg">B2</button>
-              <button class="bg-gray-100 py-4 px-8 rounded-lg">C1</button>
-              <button class="bg-gray-100 py-4 px-8 rounded-lg">C2</button>
+              <button
+                onclick="bookTicket()"
+                id="a1"
+                class="busSeat bg-gray-100 py-4 px-8 rounded-lg"
+              >
+                A1
+              </button>
+              <button id="a2" class="busSeat bg-gray-100 py-4 px-8 rounded-lg">
+                A2
+              </button>
+              <button id="b1" class="busSeat bg-gray-100 py-4 px-8 rounded-lg">
+                B1
+              </button>
+              <button id="b2" class="busSeat bg-gray-100 py-4 px-8 rounded-lg">
+                B2
+              </button>
+              <button id="c1" class="busSeat bg-gray-100 py-4 px-8 rounded-lg">
+                C1
+              </button>
+              <button id="c2" class="busSeat bg-gray-100 py-4 px-8 rounded-lg">
+                C2
+              </button>
             </div>
             <div class="grid grid-cols-2 gap-2">
-              <button class="bg-gray-100 py-4 px-8 rounded-lg">A3</button>
-              <button class="bg-gray-100 py-4 px-8 rounded-lg">A4</button>
-              <button class="bg-gray-100 py-4 px-8 rounded-lg">B3</button>
-              <button class="bg-gray-100 py-4 px-8 rounded-lg">B4</button>
-              <button class="bg-gray-100 py-4 px-8 rounded-lg">C3</button>
-              <button class="bg-gray-100 py-4 px-8 rounded-lg">C4</button>
+              <button id="a3" class="busSeat bg-gray-100 py-4 px-8 rounded-lg">
+                A3
+              </button>
+              <button id="a4" class="busSeat bg-gray-100 py-4 px-8 rounded-lg">
+                A4
+              </button>
+              <button id="b3" class="busSeat bg-gray-100 py-4 px-8 rounded-lg">
+                B3
+              </button>
+              <button id="b4" class="busSeat bg-gray-100 py-4 px-8 rounded-lg">
+                B4
+              </button>
+              <button id="c3" class="busSeat bg-gray-100 py-4 px-8 rounded-lg">
+                C3
+              </button>
+              <button id="c4" class="busSeat bg-gray-100 py-4 px-8 rounded-lg">
+                C4
+              </button>
             </div>
           </div>
         </div>
@@ -279,23 +317,41 @@
           <h2 class="text-left py-2 border-b-2 border-dashed">Get Ticket</h2>
           <div class="m-4 bg-gray-100 p-4 rounded-lg">
             <div class="">
-              <div class="flex justify-between border-b-2 border-dashed pb-2">
-                <p>
-                  Seat
-                  <span class="bg-brand text-white rounded-lg px-2">0</span>
-                </p>
-                <p>Class</p>
-                <p>Price</p>
+              <div class="flex justify-between pb-2">
+                <div id="seatName">
+                  <p>
+                    Seat
+                    <span
+                      id="seatNo"
+                      class="bg-brand text-white rounded-lg px-2"
+                      >0</span
+                    >
+                  </p>
+                </div>
+                <div id="class"><p>Class</p></div>
+                <div id="price"><p>Price</p></div>
+              </div>
+              <div class="flex justify-between pb-2">
+                <p id="seatName"></p>
+                <p id="seatClass"></p>
+                <p id="price"></p>
               </div>
             </div>
             <div class="flex justify-between border-t-2 pb-2 my-2">
               <p>Total Price</p>
-              <p>BDT <span>0</span></p>
+              <p>BDT : <span id="totalPrice">0</span></p>
             </div>
-            <label class="input flex items-center">
-              <input type="text" class="grow" placeholder="Have any copupon?" />
+            <label id="couponHolder" class="input flex items-center">
+              <input
+                id="coupon"
+                type="text"
+                class="grow"
+                placeholder="Have any coupon?"
+              />
 
               <a
+                onclick="discountedGrandTotal()"
+                id="couponApply"
                 class="btn p-2 my-2 rounded-lg bg-brand text-white"
                 disabled="disabled"
               >
@@ -304,7 +360,7 @@
             </label>
             <div class="flex justify-between pb-2 my-2">
               <p>Grand Total</p>
-              <p>BDT <span>0</span></p>
+              <p>BDT <span id="grandTotal">0</span></p>
             </div>
           </div>
           <div class="p-4">
@@ -323,8 +379,9 @@
                 <span class="label-text">Phone Number*</span>
               </div>
               <input
-                type="text"
-                placeholder="Enter your phone number"
+                id="PhoneNo"
+                type="number"
+                placeholder="Enter 11 characters phone number"
                 class="input input-bordered w-full max-w-xs"
               />
             </label>
@@ -339,11 +396,33 @@
               />
             </label>
             <button
-              class="btn btn-wide bg-brand text-white m-4"
               disabled="disabled"
+              id="modal"
+              class="btn btn-wide bg-brand text-white m-4"
+              onclick="my_modal_5.showModal() "
             >
               Next
             </button>
+            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+              <div class="modal-box">
+                <h3 class="font-bold text-lg text-brand">
+                  <i class="fa-regular fa-circle-check"></i>
+                </h3>
+                <h3 class="font-bold text-lg text-brand">SUCCESS!</h3>
+                <p class="py-4 text-xl font-semibold">
+                  Thank you for Booking Our Bus Seats. We are working hard to
+                  find the best service and deals for you.
+                </p>
+                <p>Shortly you will find a confirmation in your email.</p>
+                <div class="modal-action flex justify-center">
+                  <form method="dialog">
+                    <button href="#" class="btn btn-wide bg-brand text-white">
+                      Close
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
             <div class="flex justify-around my-2">
               <a><u>Terms and Conditions</u></a>
               <a><u>Cancellation Policy</u></a>
@@ -353,4 +432,5 @@
       </div>
     </section>
   </body>
+  <script src="script.js"></script>
 </html>
