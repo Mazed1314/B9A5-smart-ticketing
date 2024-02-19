@@ -1,6 +1,5 @@
 const seats = document.querySelectorAll(".busSeat");
 let count = 0;
-
 for (const seat of seats) {
   seat.addEventListener("click", function (e) {
     count = count + 1;
@@ -68,10 +67,15 @@ function discountedGrandTotal() {
 document.getElementById("PhoneNo").addEventListener("keyup", function (e) {
   const text = e.target.value;
   const input = document.getElementById("modal");
-  if (!isNaN(text) && text.length === 11) {
+  if (count < 1) {
+    alert("Pleas at least select a seat ");
+    input.setAttribute("disabled", true);
+    return back;
+  } else if (!isNaN(text) && text.length === 11 && count <= 4 && count != 0) {
     input.removeAttribute("disabled");
   } else {
     input.setAttribute("disabled", true);
+    // alert("Pleas select seat and also give your 11 digit phone number");
   }
 });
 
