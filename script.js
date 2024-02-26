@@ -2,6 +2,7 @@ const seats = document.querySelectorAll(".busSeat");
 let count = 0;
 for (const seat of seats) {
   seat.addEventListener("click", function (e) {
+    e.target.setAttribute("disabled", true);
     count = count + 1;
     if (count == 4) {
       for (const s of seats) {
@@ -9,7 +10,7 @@ for (const seat of seats) {
       }
     }
 
-    const test = (seat.style.backgroundColor = "green");
+    const test = (seat.style.backgroundColor = "LimeGreen");
     seat.style.color = "white";
 
     const totalSeats = document.getElementById("seatLeft").innerText;
@@ -32,8 +33,8 @@ for (const seat of seats) {
     appendChild("class", p2);
     appendChild("price", p3);
 
-    setTextElementValueById("grandTotal", totalPrice);
-    setTextElementValueById("totalPrice", totalPrice);
+    setTextElementValueById("grandTotal", totalPrice + " TK");
+    setTextElementValueById("totalPrice", totalPrice + " TK");
     setTextElementValueById("seatNo", count);
   });
 }
@@ -42,7 +43,7 @@ for (const seat of seats) {
 
 document.getElementById("coupon").addEventListener("keyup", function (e) {
   const text = e.target.value;
-  let discount;
+
   const token = document.getElementById("couponApply");
   if (count !== 4) {
     token.setAttribute("disabled", true);
@@ -52,12 +53,14 @@ document.getElementById("coupon").addEventListener("keyup", function (e) {
     const takeTotalPrice = document.getElementById("grandTotal").innerText;
     const grandTotalInt = parseInt(takeTotalPrice);
     discount = grandTotalInt * 0.15;
+    setTextElementValueById("disPrice", "Discount : " + discount + " TK");
     newDiscountTotal = grandTotalInt - grandTotalInt * 0.15;
   } else if (count == 4 && text === "Couple 20") {
     token.removeAttribute("disabled");
     const takeTotalPrice = document.getElementById("grandTotal").innerText;
     const grandTotalInt = parseInt(takeTotalPrice);
     discount = grandTotalInt * 0.2;
+    setTextElementValueById("disPrice", "Discount : " + discount + " TK");
     newDiscountTotal = grandTotalInt - grandTotalInt * 0.2;
   } else {
     token.setAttribute("disabled", true);
@@ -65,10 +68,9 @@ document.getElementById("coupon").addEventListener("keyup", function (e) {
 });
 
 function discountedGrandTotal() {
-  setTextElementValueById("grandTotal", newDiscountTotal);
+  setTextElementValueById("grandTotal", newDiscountTotal + " TK");
   document.getElementById("couponApply").classList.add("hidden");
   document.getElementById("couponHolder").classList.add("hidden");
-  const p4 = document.createElement("p");
 }
 // --------------------------------------------------------------------------------
 document.getElementById("PhoneNo").addEventListener("keyup", function (e) {
