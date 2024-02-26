@@ -139,7 +139,7 @@
           class="flex flex-col md:flex-row justify-center gap-8 px-2 md:px-0 md:mt-[-40px]"
         >
           <div
-            class="flex gap-2 bg-white p-4 rounded-2xl border-b-2 border-brand font-bold"
+            class="flex justify-center gap-2 bg-white p-4 rounded-2xl border-b-2 border-brand font-bold"
           >
             <div><img src="images/people.png" alt="" /></div>
             <div>
@@ -148,7 +148,7 @@
             </div>
           </div>
           <div
-            class="flex gap-2 bg-white p-4 rounded-2xl border-b-2 border-brand font-bold"
+            class="flex justify-center gap-2 bg-white p-4 rounded-2xl border-b-2 border-brand font-bold"
           >
             <div><img src="images/ticket-cupon.png" alt="" /></div>
             <div>
@@ -157,7 +157,7 @@
             </div>
           </div>
           <div
-            class="flex gap-2 bg-white p-4 rounded-2xl border-b-2 border-brand font-bold"
+            class="flex justify-center gap-2 bg-white p-4 rounded-2xl border-b-2 border-brand font-bold"
           >
             <div><img src="images/stoppage.png" alt="" /></div>
             <div>
@@ -291,7 +291,7 @@
         >
           <div
             id="booking"
-            class="border-b-2 md:border-b-0 md:border-r-2 border-dashed p-4 m-4 w-full md:w-3/5"
+            class="border-b-2 md:border-b-0 md:border-r-2 border-dashed p-2 md:p-4 md:m-4 w-full md:w-3/5"
           >
             <h2 class="text-left py-2">Select Your Seat</h2>
             <div class="flex justify-between border-y-2 border-dashed py-2">
@@ -332,7 +332,7 @@
                 </button>
                 <button
                   id="a2"
-                  class="busSeat shadow-md bg-gray-100 P-2 md:py-4 md:px-6 rounded-lg"
+                  class="busSeat shadow-md bg-gray-100 P-2 md:py-4 md:px-6 rounded-lg relative"
                 >
                   A-2
                 </button>
@@ -569,7 +569,7 @@
               </div>
             </div>
           </div>
-          <div class="p-4 m-4 w-full md:md:w-2/5">
+          <div class="p-4 md:m-4 w-full md:w-2/5">
             <h2 class="text-left py-2 border-b-2 border-dashed">Get Ticket</h2>
             <div class="m-4 bg-gray-100 p-4 rounded-lg">
               <div class="">
@@ -603,7 +603,10 @@
               <div class="flex justify-end pb-2 my-2">
                 <span id="disPrice"></span>
               </div>
-              <label id="couponHolder" class="input flex items-center">
+              <label
+                id="couponHolder"
+                class="input input-bordered flex justify-between"
+              >
                 <input
                   id="coupon"
                   type="text"
@@ -614,7 +617,7 @@
                 <a
                   onclick="discountedGrandTotal()"
                   id="couponApply"
-                  class="btn p-2 my-2 rounded-lg bg-brand text-white"
+                  class="btn rounded-lg bg-brand text-white ml-[-38px] md:ml-0 md:mr-[-15px]"
                   disabled="disabled"
                 >
                   Apply
@@ -660,7 +663,7 @@
               <button
                 disabled="disabled"
                 id="modal"
-                class="btn btn-wide bg-brand text-white md:m-4"
+                class="btn btn-wide bg-brand text-white m-2 md:m-4"
                 onclick="my_modal_5.showModal() "
               >
                 Next
